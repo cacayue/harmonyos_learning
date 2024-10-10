@@ -88,7 +88,7 @@ function grandsonBuilder($$: Tmp){
       Blank()
       HelloComponent({message: $$.paramA1})
       Blank()
-      // $$引用传递
+      // $$引用传递， 对象字面量
       childBuilder({paramA1: $$.paramA1})
       Blank()
       // 值传递
