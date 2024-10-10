@@ -31,6 +31,11 @@ struct Parent {
   build() {
     Column() {
       // this实际指向为Child组件,第二个参数this指向Parent
+      Child({ customBuildParam: this.componentBuilder, customChangeThisBuilderParam: this.componentBuilder })
+      Line()
+        .width(`100%`)
+        .height(10)
+        .backgroundColor($r('sys.color.black')).margin(10)
       Child({ customBuildParam: this.componentBuilder, customChangeThisBuilderParam: ():void => { this.componentBuilder() } })
       Line()
         .width(`100%`)
@@ -42,6 +47,12 @@ struct Parent {
         .width(`100%`)
         .height(10)
         .backgroundColor($r('sys.color.black')).margin(10)
+      Button("Change Label")
+        .fontSize(30)
+        .onClick(() => {
+          // 修改Label不生效， 因为没有@State监听
+          this.label = "Hello label"
+        })
       Button("Go to index")
         .fontSize(30)
         .onClick(() => {

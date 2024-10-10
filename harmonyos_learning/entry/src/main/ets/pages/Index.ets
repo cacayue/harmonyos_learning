@@ -25,6 +25,11 @@ struct Index {
         .onClick(() => {
           router.pushUrl({url: "pages/Third"});
         })
+      Button("Go to Fourth")
+        .fontSize(30)
+        .onClick(() => {
+          router.pushUrl({url: "pages/Fourth"});
+        })
     }
     .height('100%')
     .width('100%')
