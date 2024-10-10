@@ -15,6 +15,7 @@ export type  buttonClickFn = () => void;
   }
 }
 
+
 @Builder
 export function buildButton(text: string, fn: buttonClickFn){
   Button(text)
@@ -22,6 +23,17 @@ export function buildButton(text: string, fn: buttonClickFn){
     .margin(20)
     .onClick(() => {
       fn();
+    })
+}
+
+
+@Builder
+export function indexButton(){
+  Button("Back Index")
+    .fontSize(30)
+    .margin(20)
+    .onClick(() => {
+      goToIndex();
     })
 }
 

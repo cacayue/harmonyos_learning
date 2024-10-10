@@ -23,6 +23,9 @@ struct Index {
       buildButton("Next to Third", () => {
         goToRouter(RouterPath.Third)
       })
+      buildButton("Next to Fourth", () => {
+        goToRouter(RouterPath.Fourth)
+      })
     }
     .height('100%')
     .width('100%')
