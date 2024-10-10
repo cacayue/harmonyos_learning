@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "模块描述"
+    },
+    {
+      "name": "Test1Ability_desc",
+      "value": "description"
+    },
+    {
+      "name": "Test1Ability_label",
+      "value": "label"
+    },
+    {
+      "name": "Test1Ability1_desc",
+      "value": "description"
+    },
+    {
+      "name": "Test1Ability1_label",
+      "value": "label"
+    }
+  ]
+}
