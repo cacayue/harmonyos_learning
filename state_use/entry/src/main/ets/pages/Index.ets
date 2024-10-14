@@ -1,20 +1,24 @@
+import { AddressBookView } from '../components/AddressBookView';
+import { Address, AddressBook, Person } from '../models/models'
+
 @Entry
 @Component
 struct Index {
-  @State message: string = 'Hello World';
+  @Provide addrBook: AddressBook = new AddressBook(
+    new Person("Gigi", "Itamerenkatu 9", 180, "Helsinki", ["18*********", "18*********", "18*********"]),
+    [
+      new Person("Oly", "Itamerenkatu 9", 180, "Helsinki", ["18*********", "18*********"]),
+      new Person("Sam", "Itamerenkatu 9", 180, "Helsinki", ["18*********", "18*********"]),
+      new Person("Vivi", "Itamerenkatu 9", 180, "Helsinki", ["18*********", "18*********"]),
+    ]);
 
   build() {
-    RelativeContainer() {
-      Text(this.message)
-        .id('HelloWorld')
-        .fontSize(50)
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
+    Column() {
+      AddressBookView({
+        me: this.addrBook.me,
+        contacts: this.addrBook.contacts,
+        selectedPerson: this.addrBook.me
+      })
     }
-    .height('100%')
-    .width('100%')
   }
 }
