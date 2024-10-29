@@ -1,20 +1,39 @@
+import { CommonConstants } from '../common/constants/CommonConstants';
+import { DaffodilsNumberCustomDialog } from '../view/DaffodilsNumberCustomDialog';
+
 @Entry
 @Component
 struct Index {
-  @State message: string = 'Hello World';
+  daffodilsNumberCustomDialogController: CustomDialogController | null = new CustomDialogController({
+    builder: DaffodilsNumberCustomDialog(),
+    alignment: DialogAlignment.Center,
+    offset: { dx: CommonConstants.OFFSET_X, dy: CommonConstants.OFFSET_Y }
+  });
 
   build() {
-    RelativeContainer() {
-      Text(this.message)
-        .id('HelloWorld')
-        .fontSize(50)
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
+    Column() {
+      Text($r('app.string.ArkTS_Development_Case'))
+        .width(CommonConstants.PERCENT_NINETY)
+        .margin({
+          top: $r('app.float.text_margin_top'),
+          bottom: $r('app.float.text_margin_bottom'),
+          left: $r('app.float.text_margin_left'),
+          right: $r('app.float.text_margin_right')
         })
+        .font({ size: $r('app.float.text_font_size'), weight: CommonConstants.FONT_WEIGHT_SEVEN_HUNDRED })
+
+      Column() {
+        Button($r('app.string.DaffodilsNumber'))
+          .width($r("app.float.button_width"))
+          .height($r("app.float.button_height"))
+          .onClick(() => {
+            this.daffodilsNumberCustomDialogController?.open();
+          })
+      }
+      .width(CommonConstants.PERCENT_FULL)
     }
-    .height('100%')
-    .width('100%')
+    .justifyContent(FlexAlign.SpaceBetween)
+    .width(CommonConstants.PERCENT_FULL)
+    .height(CommonConstants.PERCENT_FULL)
   }
 }
