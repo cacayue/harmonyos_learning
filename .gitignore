@@ -2,8 +2,8 @@
 /local.properties
 /.idea
 **/build
-/.hvigor
-/.preview
+**/.hvigor/
+**/.preview/
 .cxx
 /.clangd
 /.clang-format
