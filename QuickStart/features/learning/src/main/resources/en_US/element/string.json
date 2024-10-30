@@ -5,12 +5,12 @@
       "value": "module description"
     },
     {
-      "name": "EntryAbility_desc",
+      "name": "LearningAbility_desc",
       "value": "description"
     },
     {
-      "name": "EntryAbility_label",
-      "value": "HMOS Basic"
+      "name": "LearningAbility_label",
+      "value": "label"
     },
     {
       "name": "apply_for_network",

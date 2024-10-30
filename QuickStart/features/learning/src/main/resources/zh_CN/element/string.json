@@ -5,12 +5,12 @@
       "value": "模块描述"
     },
     {
-      "name": "EntryAbility_desc",
+      "name": "LearningAbility_desc",
       "value": "description"
     },
     {
-      "name": "EntryAbility_label",
-      "value": "HMOS世界入门版"
+      "name": "LearningAbility_label",
+      "value": "label"
     },
     {
       "name": "apply_for_network",

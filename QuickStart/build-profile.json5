@@ -36,6 +36,18 @@
           ]
         }
       ]
+    },
+    {
+      "name": "learning",
+      "srcPath": "./features/learning",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
     }
   ]
 }
