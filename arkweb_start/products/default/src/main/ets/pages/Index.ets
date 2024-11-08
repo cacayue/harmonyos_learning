@@ -1,5 +1,5 @@
 import { CourseLearning } from '@ohos/learning';
-import { KnowledgeMap, KnowledgeMapContent } from '@ohos/map';
+import { KnowledgeMap } from '@ohos/map';
 import { QuickStartPage } from '@ohos/quickstart';
 
 @Entry

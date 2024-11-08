@@ -21,7 +21,6 @@ const TypeMapIcon: Record<string, string> = {
   '视频教程': 'app.media.ic_video',
 }
 
-@Preview
 @Component
 export struct KnowledgeMapContent {
   @Prop section: Section;
@@ -86,35 +85,38 @@ export struct KnowledgeMapContent {
 
 
   build() {
-    Scroll(this.scroller) {
-      Column(){
-        Text(this.section?.title)
-          .fontFamily('HarmonyHeiTi-Bold')
-          .fontSize(20)
-          .fontColor(Color.Black)
-          .lineHeight(33)
-          .fontWeight(700)
-          .width('100%')
-        Text(this.section?.brief)
-          .fontFamily('HarmonyHeiTi')
-          .fontSize(12)
-          .fontColor('rgba(0,0,0,0.60)')
-          .fontWeight(400)
-          .textAlign(TextAlign.JUSTIFY)
-          .margin({ top: 12 })
-        ForEach(this.section?.materials, (material: Material) => {
-          this.KnowledgeBlock(material)
-        }, (material: Material) => material.subtitle)
+    NavDestination() {
+      Scroll(this.scroller) {
+        Column(){
+          Text(this.section?.title)
+            .fontFamily('HarmonyHeiTi-Bold')
+            .fontSize(20)
+            .fontColor(Color.Black)
+            .lineHeight(33)
+            .fontWeight(700)
+            .width('100%')
+          Text(this.section?.brief)
+            .fontFamily('HarmonyHeiTi')
+            .fontSize(12)
+            .fontColor('rgba(0,0,0,0.60)')
+            .fontWeight(400)
+            .textAlign(TextAlign.JUSTIFY)
+            .margin({ top: 12 })
+          ForEach(this.section?.materials, (material: Material) => {
+            this.KnowledgeBlock(material)
+          }, (material: Material) => material.subtitle)
+        }
+        .alignItems(HorizontalAlign.Start)
+        .padding({ top:12, right: 16, bottom: 12, left: 16 })
+        .backgroundColor('#F1F3F5')
       }
-      .alignItems(HorizontalAlign.Start)
-      .padding({ top:12, right: 16, bottom: 12, left: 16 })
       .backgroundColor('#F1F3F5')
+      .align(Alignment.TopStart)
+      .constraintSize({minHeight: '100%' })
+      .edgeEffect(EdgeEffect.Spring)
+      .scrollable(ScrollDirection.Vertical)
+      .scrollBar(BarState.Auto)
     }
-    .backgroundColor('#F1F3F5')
-    .align(Alignment.TopStart)
-    .constraintSize({minHeight: '100%' })
-    .edgeEffect(EdgeEffect.Spring)
-    .scrollable(ScrollDirection.Vertical)
-    .scrollBar(BarState.Auto)
+    .hideTitleBar(true)
   }
 }
