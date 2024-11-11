@@ -1,3 +1,4 @@
+import StyleConstants from "../common/constants/StyleConstants";
 import PreferenceModel from "../model/PreferenceModel";
 import ButtonItemData from "../viewmodel/ButtonItemData"
 import Fruit from "../viewmodel/Fruit"
@@ -40,5 +41,19 @@ export default  struct  ButtonComponent {
   }
 
   build() {
+    Column() {
+      ForEach(this.buttonItemValues, (item: ButtonItemData) => {
+        Button(item.resource, { type: ButtonType.Capsule, stateEffect: true})
+          .backgroundColor($r('app.color.button_background_color'))
+          .width(StyleConstants.BUTTON_WIDTH)
+          .height(StyleConstants.BUTTON_HEIGHT)
+          .fontWeight(StyleConstants.FONT_WEIGHT)
+          .fontSize(StyleConstants.FONT_SIZE)
+          .margin({ bottom: StyleConstants.BUTTON_MARGIN_BOTTOM })
+          .onClick(() => {
+            item.clickMethod();
+          })
+      }, (item: ButtonItemData) => JSON.stringify(item))
+    }
   }
 }
