@@ -10,15 +10,15 @@ export default struct TextItemComponent {
   private marginBottom: string = '';
   private marginTop: string = '';
   private textInputType: InputType = InputType.Normal;
-  private testFlag: number = 0;
-  @Link fruit: Fruit;
+  private textFlag: number = 0;
+  @Link  fruit: Fruit;
 
   private textInputCallBack = (value: string) => {
     
   }
   
   aboutToAppear(): void {
-    if (this.testFlag === CommonConstants.FRUIT_FLAG) {
+    if (this.textFlag === CommonConstants.FRUIT_FLAG) {
       this.marginTop = StyleConstants.MARGIN_TOP;
       this.marginBottom = StyleConstants.MARGIN_BOTTOM_SMALL;
       this.textInputType = InputType.Normal
@@ -44,7 +44,7 @@ export default struct TextItemComponent {
         })
       TextInput({
         placeholder: this.placeholderResource,
-        text: this.testFlag === 0 ? this.fruit.fruitName : this.fruit.fruitNum
+        text: this.textFlag === 0 ? this.fruit.fruitName : this.fruit.fruitNum
       })
         .placeholderFont({ size: StyleConstants.FONT_SIZE, weight: StyleConstants.FONT_WEIGHT})
         .placeholderColor($r('app.color.placeholder_color'))
