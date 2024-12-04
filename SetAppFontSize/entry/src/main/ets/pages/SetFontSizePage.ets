@@ -3,6 +3,7 @@ import CommonConstants from '../common/constants/CommonConstants';
 import StyleConstants from '../common/constants/StyleConstants';
 import PreferencesUtil from '../common/database/PreferencesUtil';
 import Logger from '../common/utils/Logger';
+import { ChatItemComponent } from '../view/ChatItemComponent';
 import TitleBarComponent from '../view/TitleBarComponent';
 import ChatData from '../viewmodel/ChatData';
 import SetViewModel from '../viewmodel/SetViewModel';
@@ -34,7 +35,10 @@ struct SetFontSizePage {
         List() {
           ForEach(this.contentArr, (item: ChatData) => {
             ListItem() {
-              
+              ChatItemComponent({
+                item: item,
+                changeFontSize: this.changeFontSize
+              })
             }
           }, (item: ChatData) => JSON.stringify(item))
         }
