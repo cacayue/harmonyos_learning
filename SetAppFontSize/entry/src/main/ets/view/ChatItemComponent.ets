@@ -19,7 +19,7 @@ export  struct  ChatItemComponent {
           StyleConstants.HEAD_RIGHT_PERCENT : StyleConstants.HEAD_LEFT_PERCENT,
         })
 
-
+      ChatContent({ item: this.item, changeFontSize: this.changeFontSize })
     }
     .alignItems(VerticalAlign.Top)
     .width(StyleConstants.FULL_WIDTH)
