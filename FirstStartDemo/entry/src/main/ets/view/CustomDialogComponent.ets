@@ -55,7 +55,7 @@ export default struct CustomDialogComponent {
         Text($r('app.string.dialog_button_agree'))
           .fancy()
           .onClick(() => {
-            this.controller.open();
+            this.controller.close();
             this.confirm();
           })
       }
