@@ -1,6 +1,6 @@
 import CommonConstants from '../common/constants/CommonConstants';
 import StyleConstants from '../common/constants/StyleConstants';
-import PreferenceUtil from '../common/database/PreferencesUtil';
+import PreferencesUtil from '../common/database/PreferencesUtil';
 import Logger from '../common/utils/Logger';
 import SettingItemComponent from '../view/SettingItemComponent';
 import TitleBarComponent from '../view/TitleBarComponent';
@@ -18,7 +18,7 @@ struct HomePage {
   @State changeFontSize: number = CommonConstants.SET_SIZE_NORMAL;
 
   onPageShow(): void {
-    PreferenceUtil.getChangeFontSize().then((value) => {
+    PreferencesUtil.getChangeFontSize().then((value) => {
       this.changeFontSize = value;
       Logger.info(TAG, `Get the value of changeFontSize: ${this.changeFontSize}`);
     });

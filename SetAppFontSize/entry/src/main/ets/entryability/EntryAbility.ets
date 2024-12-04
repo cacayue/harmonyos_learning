@@ -1,10 +1,16 @@
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
+import PreferencesUtil from '../common/database/PreferencesUtil';
+import CommonConstants from '../common/constants/CommonConstants';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+
+    PreferencesUtil.createFontPreferences(this.context);
+    // 设置默认大小
+    PreferencesUtil.saveDefaultFontSize(CommonConstants.SET_SIZE_NORMAL);
   }
 
   onDestroy(): void {
