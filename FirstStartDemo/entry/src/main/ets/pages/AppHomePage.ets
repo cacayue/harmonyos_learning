@@ -1,12 +1,12 @@
 @Entry
 @Component
-struct Index {
-  @State message: string = 'Hello World';
+struct AppHomePage {
+  @State message: string = 'Hello Home';
 
   build() {
     RelativeContainer() {
       Text(this.message)
-        .id('HelloWorld')
+        .id('AppHomePageHelloWorld')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
         .alignRules({
